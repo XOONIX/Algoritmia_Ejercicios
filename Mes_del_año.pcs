@@ -1,0 +1,31 @@
+///Johnny Fabian Cardozo Montenegro
+///Nombre:Mes del año segun numero
+///Entrada:Mes;Como entero del 1 al 12
+///Salida:"Tu mes es (Mes del año)", "Valor no reconocido" 
+///Proceso:Define la variable "Mes" como entero, luego la une a "segun" y 
+///dependiendo el valor ingresado arroja un resultado
+
+
+Algoritmo Mes_del_año
+	Definir Mes Como Entero
+	Escribir "Convertidor de numerito a mes del año, ¿Que numerito te gustaria convertir? "
+	Leer Mes
+	Segun Mes Hacer
+		1: Escribir "Tu mes es Enero"
+		2: Escribir "Tu mes es Febrero"
+		3: Escribir "Tu mes es Marzo"
+		4: Escribir "Tu mes es Abril"
+		5: Escribir "Tu mes es Mayo"
+		6: Escribir "Tu mes es Junio"
+		7: Escribir "Tu mes es Julio"
+		8: Escribir "Tu mes es Agosto"
+		9: Escribir "Tu mes es Septiembre"
+		10: Escribir "Tu mes es Octubre"
+		11: Escribir "Tu mes es Noviembre"
+		12: Escribir "Tu mes es Diciembre"
+		De Otro Modo:
+			Escribir "Valor no reconocido"
+			
+	FinSegun
+	
+FinAlgoritmo
