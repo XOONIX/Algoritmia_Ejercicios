@@ -5,22 +5,27 @@
 //Proceso:
 
 Algoritmo Tipo_de_triangulo
-		Definir lado1, lado2, lado3 Como Real
-		Escribir "ingrese los tres lados del triangulo"
-		Leer lado1, lado2, lado3
-		segun lado1=lado2 y lado1=lado3 Hacer
-			Escribir "El triangulo es equilatero"
-		FinSegun
-		si	lado1 =  lado2 y lado1 = lado3 Entonces
-			escribir	"El triangulo es equilatero"
+	Definir lado1, lado2, lado3 Como Real
+	Definir tipo Como Entero
+	
+	Escribir "Ingrese los tres lados del triángulo:"
+	Leer lado1, lado2, lado3
+	
+	// El si se usa para Determinar tipo de triangulo con un número
+	Si lado1 = lado2 Y lado1 = lado3 Entonces
+		tipo = 1   // equilátero
+	SiNo
+		Si (lado1 = lado2 Y lado2 <> lado3) O (lado1 = lado3 Y lado2 <> lado1) O (lado2 = lado3 Y lado3 <> lado1) Entonces
+			tipo = 2   // isósceles
 		SiNo
-			si (lado1 = lado2 y lado2 <> lado3) o (lado1 = lado3 y lado2 <> lado1) o (lado2 = lado3 y lado3 <>lado1) Entonces
-				Escribir "El triangulo es Isosceles" 
-			SiNo
-				si lado1 <> lado2 y lado1 <> lado3 Entonces
-					Escribir "El triangulo es escaleno"
-				FinSi
-			FinSi
+			tipo = 3   // escaleno
 		FinSi
-		
-	Fin Algoritmo
+	FinSi
+	
+	// Segun recoge el valor entero y entrega un resultado en carateres
+	Segun tipo Hacer
+		1: Escribir "El triángulo es equilátero"
+		2: Escribir "El triángulo es isósceles"
+		3: Escribir "El triángulo es escaleno"
+	FinSegun
+FinAlgoritmo

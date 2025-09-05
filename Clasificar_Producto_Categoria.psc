@@ -1,8 +1,9 @@
+///Johnny Fabian Cardozo
 ///
-///
-///
-///
-///
+///Nombre:
+///Entrada:
+///Salida:
+///Proceso:
 
 Algoritmo Clasificar_Producto_Categoria
 		Definir lacteo, harina, bebida Como Caracter
