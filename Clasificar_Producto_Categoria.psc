@@ -1,11 +1,13 @@
-///Johnny Fabian Cardozo
-///
-///Nombre:
-///Entrada:
-///Salida:
-///Proceso:
+//Johnny Fabian Cardozo
+//
+//Nombre:Clasificar un producto por categoria
+//Entrada:Lacteo, harina y bebida; como caracteres
+//Salida:Dependiendo el valor arroja un resultado
+//Proceso:
 
 Algoritmo Clasificar_Producto_Categoria
+	
+		//Definicion de variables
 		Definir lacteo, harina, bebida Como Caracter
 		
 		Escribir "¿Sabes que tipo de productos compras?" 
@@ -18,7 +20,7 @@ Algoritmo Clasificar_Producto_Categoria
 		Escribir "Elige 1 producto de cada fila:"
 		Leer lacteo, harina, bebida
 		
-		///Clasificación de lacteo
+		//Clasificación de lacteo
 		Segun lacteo Hacer
 			"Leche": Escribir "La Leche es un lácteo"
 			"Yogurt": Escribir "El Yogurt es un lácteo"
@@ -26,7 +28,7 @@ Algoritmo Clasificar_Producto_Categoria
 			De Otro Modo: Escribir "Ese producto no está en la categoría de lácteos"
 		FinSegun
 		
-		///Clasificación de harina 
+		//Clasificación de harina 
 		Segun harina Hacer
 			"Pan": Escribir "El Pan es una harina"
 			"Arepa": Escribir "La Arepa es una harina"
@@ -34,7 +36,7 @@ Algoritmo Clasificar_Producto_Categoria
 			De Otro Modo: Escribir "Ese producto no está en la categoría de harinas"
 		FinSegun
 		
-		///Clasificación de bebida 
+		//Clasificación de bebida 
 		Segun bebida Hacer
 			"Soda": Escribir "La Soda es una bebida gaseosa"
 			"Gaseosa": Escribir "La Gaseosa es una bebida gaseosa"

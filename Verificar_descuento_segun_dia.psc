@@ -1,6 +1,17 @@
+//Johnny Fabian Cardozo Montenegro
+//
+//Nombre:Verificador de descuento segun el dia 
+//Entrada:dia; como entero
+//Salida:Dependiendo el valor escogido, se entregara un descuerdo concorde
+//Proceso:
+
+
 Algoritmo Verificar_descuento_segun_dia
+	//Se define la variable
 	Definir dia Como Entero
+	//Se escribe el mensaje de entrada
 	Escribir "¿Que dia haras las compras?"
+	//Menu de Opciones
 	Mostrar "1= Lunes"
 	Mostrar "2= Martes"
 	Mostrar "3= Miercoles"
@@ -9,8 +20,9 @@ Algoritmo Verificar_descuento_segun_dia
 	Mostrar "6= Sabado"
 	Mostrar "7= Domingo"
 	Mostrar "8= Festivo"
+	//Se lee la variable 
 	Leer dia
-	
+	//Comienza accion segun 
 	Segun dia Hacer
 		1: Escribir "¡Tienes un descuento de (10%) por ser Lunes !"
 		2: Escribir "¡Tienes un descuento de (5%) por ser Martes !"

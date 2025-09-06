@@ -1,6 +1,14 @@
+//Johnny Fabian Cardozo Montenegro
+//
+//Nombre:Estacion del año segun el mes
+//Entrada:Mes;como entero
+//Salida:Dependiendo el mes del año escogido, muestra (Invierno, Primavera, Verano o Otoño)
+//Proceso:
 Algoritmo Estacion_del_año_segun_mes
+	//Define variable
 	Definir Mes Como Entero
 	Escribir "Que mes deseas consultar "
+	//Despliega menu de seleccion
 	Mostrar "1= Enero"
 	Mostrar "2= Febrero"
 	Mostrar "3= Marzo" 
@@ -13,7 +21,9 @@ Algoritmo Estacion_del_año_segun_mes
 	Mostrar "10= Octubre"
 	Mostrar "11= Noviembre"
 	Mostrar "12= Diciembre"
+	//Lee variable
 	Leer Mes
+	//Comienza accion segun valor escogido
 	Segun Mes Hacer
 		1: Escribir "En Enero es Invierno"
 		2: Escribir "En Febrero es Invierno"

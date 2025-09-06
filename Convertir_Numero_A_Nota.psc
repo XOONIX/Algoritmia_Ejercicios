@@ -1,19 +1,19 @@
-///Johnny Fabian Cardozo Montenegro
-///Nombre:Convertir un numero a nota 
-///Entrada:Nota;como un numero real, Aprox;Convertidor de numero real a entero
-///Salida:
-///Proceso:
-///
+//Johnny Fabian Cardozo Montenegro
+//Nombre:Convertir un numero a nota 
+//Entrada:Nota;como un numero real, Aprox;Convertidor de numero real a entero
+//Salida:Mateeria perdida, Insuficiente, Aceptable, Bueno, Excelente
+//Proceso:
+//
 
 
 Algoritmo Convertir_Numero_A_Nota
 	Definir nota Como Real
 	Escribir "Escribe tu nota, (recuerda que la nota minima es 0, y la maxima 50):"
 	leer nota 
-	///El si aproxima el numero para poderlo leer con el segun mas adelante
+	//El (si) aproxima el numero para poderlo leer con el (segun) mas adelante
 	Si nota >= 0 Y nota <= 10 Entonces
 		Aprox = 10
-		///Aprox es la nueva variable entera
+		//Aprox es la nueva variable entera
 	SiNo
 		Si nota >= 11 Y nota <= 20 Entonces
 			Aprox = 20
@@ -37,7 +37,7 @@ Algoritmo Convertir_Numero_A_Nota
 			FinSi
 		FinSi
 	FinSi	
-	///Ahora la Funcion segun puede trabajar con valores enteros.
+	//Ahora la Funcion (segun) puede trabajar con valores enteros.
 	Segun Aprox hacer
 		10: Escribir "Materia Perdida"
 		20: Escribir "Insuficiente"

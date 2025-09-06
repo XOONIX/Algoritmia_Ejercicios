@@ -1,6 +1,15 @@
+//Johnny Fabian Cardozo Montenegro
+//
+//Nombre:Dia laboral o finde
+//Entrada:dia;como entero
+//Salida:El dia (Lunes, martes, miercoles, jueves, viernes, sabado, domigo o festivo) Es o No laboral.
+//Proceso:
+
 Algoritmo Dia_Laboral_O_Finde
+	//Define variable
 		Definir dia Como Entero
 		Escribir "¿Que dia quieres consultar?"
+		//Muestra el menu de seleccion
 		Mostrar "1= Lunes"
 		Mostrar "2= Martes"
 		Mostrar "3= Miercoles"
@@ -9,8 +18,9 @@ Algoritmo Dia_Laboral_O_Finde
 		Mostrar "6= Sabado"
 		Mostrar "7= Domingo"
 		Mostrar "8= Festivo"
+		//Lee variable
 		Leer dia
-		
+		// Comienza con Funcion (segun)
 		Segun dia Hacer
 			1: Escribir "¡El Dia Lunes es Laboral!"
 			2: Escribir "¡El Dia Martes es Laboral!"

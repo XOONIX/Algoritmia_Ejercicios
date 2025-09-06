@@ -1,9 +1,9 @@
-///Johnny Fabian Cardozo Montenegro
-///Nombre:Mes del año segun numero
-///Entrada:Mes;Como entero del 1 al 12
-///Salida:"Tu mes es (Mes del año)", "Valor no reconocido" 
-///Proceso:Define la variable "Mes" como entero, luego la une a "segun" y 
-///dependiendo el valor ingresado arroja un resultado
+//Johnny Fabian Cardozo Montenegro
+//Nombre:Mes del año segun numero
+//Entrada:Mes;Como entero del 1 al 12
+//Salida:"Tu mes es (Mes del año)", "Valor no reconocido" 
+//Proceso:Define la variable "Mes" como entero, luego la une a "segun" y 
+//dependiendo el valor ingresado arroja un resultado
 
 
 Algoritmo Mes_del_año

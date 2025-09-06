@@ -1,12 +1,14 @@
-///Johnny Fabian Cardozo Montenegro
-///Nombre:Tipo de transporte
-///Entrada:
-///Salida:
-///Proceso: 
+//Johnny Fabian Cardozo Montenegro
+//Nombre:Tipo de transporte
+//Entrada:Transporte
+//Salida:Caracteristica segun objeto seleccionado 
+//Proceso: 
 
 
 Algoritmo Tipo_de_Transporte
+	//Define variable
 	Definir Transporte Como Entero
+	//Muestra menu de seleccion 
 	Escribir "1. Helicoptero "
 	Escribir "2. Submarino "
 	Escribir "3. Tanque "
@@ -19,7 +21,9 @@ Algoritmo Tipo_de_Transporte
 	Escribir "10. Mototaxi "
 	Escribir "11. Caballo "
 	Escribir "¿Que Tipo de transporte sueles tomar?"
+	//Lee la variable 
 	Leer Transporte
+	//Comienza accion segun 
 	Segun Transporte Hacer
 		1: Escribir "Helicoptero, Efectivo pero ruidoso"
 		2: Escribir "Submarino, ¿Vives en atlantis?"
