@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Es bisiesto</title>
+    <!--Johnny Fabian Cardozo Montenegro 
+  //Nombre:Determinar un año bisiesto
+  //Entrada:Año; Pide el año
+  //Salida:El año es bisiesto, El año no es bisiesto
+  //Proceso:Pide el año, luego por medio del logaritmo compara, y arroja un valor para si y otro para no
+-->
+
+</head>
+<body>
+  
+    <h1>Es bisiesto</h1>
+   
+    <form class="form-group" onsubmit="mostrarResultado(event)">
+      <label for="año">Ingresa un año:</label>
+      <input type="number" id="año" name="año" required>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado" class="result"></div>
+   
+  <script>
+    // Función para mostrar el resultado en la página
+    function mostrarResultado(event) {
+      event.preventDefault();
+      const año = parseInt(document.getElementById('año').value);
+      const resultado = esBisiesto(año);
+      document.getElementById('resultado').textContent = resultado;
+    }
+
+    // Función para determinar si un año es bisiesto
+    function esBisiesto(año) {
+      if ((año % 4 === 0 && año % 100 !== 0) || año % 400 === 0) {
+        return "El año es bisiesto.";
+      } else {
+        return "El año no es bisiesto.";
+      }
+    }
+  </script>
+</body>
+</html>

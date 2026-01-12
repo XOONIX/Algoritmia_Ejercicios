@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperatura de congelación</title>
+  <!--Johnny Fabian Cardozo Montenegro 
+  //Nombre:Temperatura de congelacion 
+  //Entrada:temperatura;recibe un valor numerico flotante.
+  //Salida: La temperatura es adecuada para la congelacion o no, segun sea el caso. 
+  //Proceso:La variable "temperatura" solicita un valor "float" y compara Sí es mayor a 0, 
+  //o menor. Da un resultado respecto al valor previo.-->
+</head>
+<body>
+  
+    <h1>Temperatura de congelación</h1>
+    <form class="form-group" onsubmit="mostrarResultado(event)">
+      <label for="temperatura">Ingresa la temperatura:</label>
+      <input type="number" id="temperatura" name="temperatura" required>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado" class="result"></div>
+  <script>
+    // Función para mostrar el resultado en la página
+    function mostrarResultado(event) {
+      event.preventDefault();
+      const temperatura = parseFloat(document.getElementById('temperatura').value);
+      const resultado = esCongelacion(temperatura);
+      document.getElementById('resultado').textContent = resultado;
+    }
+
+    // Función para verificar la temperatura 
+    function esCongelacion(temperatura) {
+      if (temperatura <= 0) {
+        return "La temperatura es adecuada para la congelacion.";
+      } else {
+        return "La temperatura No adecuada para la congelacion.";
+      }
+    }
+  </script>
+</body>
+</html>

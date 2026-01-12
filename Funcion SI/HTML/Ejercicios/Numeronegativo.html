@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title> Es numero es negativo</title>
+  <!--Johnny Fabian Cardozo Montenegro 
+  //Nombre:Determinar si un numero es negativo
+  //Entrada:numero;Determina un Valor como flotante.
+  //Salida:El numero es ("negativo", "positivo" o "cero")
+  //Proceso:La variable "numero" ingresa un valor float, el "Sí" determina 
+  //Sí el valor es;("positivo", "negativo" o "cero") -->
+</head>
+<body>
+    <h1>Numero Negativo</h1>
+   
+    <form class="form-group" onsubmit="mostrarResultado(event)">
+      <label for="numero">Ingresa un número:</label>
+      <input type="number" id="numero" name="numero" required>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado" class="result"></div>
+  
+  <script>
+    // Función para mostrar el resultado en la página
+    function mostrarResultado(event) {
+      event.preventDefault();
+      const numero = parseFloat(document.getElementById('numero').value);
+      const resultado = esNegativo(numero);
+      document.getElementById('resultado').textContent = resultado;
+    }
+
+    // Función para determinar si un número es negativo
+    function esNegativo(numero) {
+      if (numero < 0) {
+        return "El número es negativo.";
+      } 
+      else if (numero==0)
+        return "El numero es cero";
+      else {
+        return "El número es positivo.";
+      }
+    }
+  </script>
+</body>
+</html>

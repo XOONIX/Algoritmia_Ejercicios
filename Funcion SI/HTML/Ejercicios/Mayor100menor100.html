@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mayor a 100 o menor a -100</title>
+    <!--Johnny Fabian Cardozo Montenegro 
+  //Nombre:Numero Mayor a 100 Menor a -100
+  //Entrada:numero; Pide un numero
+  //Salida:El numero es (Mayor a 100, Menor a -100, entre -100 y 100 o valor no reconocido)
+  //Proceso:Ingresa un valor en la variable "numero" dependiendo el valor realiza una operacion 
+  //y muestra el resultado respectivo-->
+</head>
+<body>
+  
+    <h1>Mayor a 100 o menor a -100</h1>
+    <form class="form-group" onsubmit="mostrarResultado(event)">
+      <label for="numero">Ingresa un número:</label>
+      <input type="number" id="numero" name="numero" required>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado" class="result"></div>
+  <script>
+    
+    // Función para mostrar el resultado en la página
+    function mostrarResultado(event) {
+      event.preventDefault();
+      const numero = parseFloat(document.getElementById('numero').value);
+      const resultado = rangoNumero(numero);
+      document.getElementById('resultado').textContent = resultado;
+    }
+
+    // Función para determinar si un número es mayor a 100 o menor a -100
+    function rangoNumero(numero) {
+      if (numero > 100 || numero < -100) {
+        return "El número está fuera del rango (-100 a 100).";
+      } else {
+        return "El número está dentro del rango (-100 a 100).";
+      }
+    }
+  </script>
+</body>
+</html>

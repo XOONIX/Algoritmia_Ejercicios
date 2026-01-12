@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Permisos de administrador</title>
+
+  <!--Johnny Fabian Cardozo Montenegro
+  //Nombre: Codigo de ingreso
+  //Entrada: codigo;Pide la clave de ingreso
+  //Salida:Permiso de administrador activado, Permiso denegado
+  //Proceso:Pide un valor, compara el valor con el que tiene predeterminado, 
+  //Sí es correcto otorga permiso-->
+
+</head>
+<body>
+    <h1>Permisos de administrador</h1>
+    <form class="form-group" onsubmit="mostrarResultado(event)">
+      <label for="codigo">Ingresa el código:</label>
+      <input type="text" id="codigo" name="codigo" required>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado" class="result"></div>
+  <script>
+    // Función para mostrar el resultado en la página
+    function mostrarResultado(event) {
+      event.preventDefault();
+      const codigo = document.getElementById('codigo').value;
+      const resultado = validarPermisos(codigo);
+      document.getElementById('resultado').textContent = resultado;
+    }
+
+    // Función para validar permisos de administrador
+    function validarPermisos(codigo) {
+      if (codigo === "Ham1234") {
+        return "Permiso de administrador activado.";
+      } else {
+        return "Permiso de administrador denegado.";
+      }
+    }
+  </script>
+</body>
+</html>

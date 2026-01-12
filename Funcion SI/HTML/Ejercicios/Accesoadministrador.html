@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceso de administrador</title>
+    <!--Johnny Fabian Cardozo Montenegro 
+  //Nombre:Administrar acceso
+  //Entrada:Pregunta si es admin o cliente.
+  //Salida:Acceso concedido, Accesso denegado
+  //Proceso:Ingresa un valor a la variable "Pregunta", compara si es admin o cliente, 
+  //dependiendo el resultado arroja un valor -->
+</head>
+<body>
+    <h1>Acceso de administrador</h1>
+
+    <form class="form-group" onsubmit="mostrarResultado(event)">
+      <label for="Pregunta">¿Eres admin o cliente? </label>
+      <input type="text" id="Pregunta" name="Pregunta" required>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado" class="result"></div>
+   
+  <script>
+    // Función para mostrar el resultado en la página
+    function mostrarResultado(event) {
+      event.preventDefault();
+      const Pregunta = document.getElementById('Pregunta').value;
+      const resultado = validarAcceso(Pregunta);
+      document.getElementById('resultado').textContent = resultado;
+    }
+
+    // Función para validar acceso de administrador
+    function validarAcceso(Pregunta) {
+      if (Pregunta === "admin") {
+        return "Acceso concedido.";
+      } else {
+        return "Acceso denegado.";
+      }
+    }
+  </script>
+</body>
+</html>
