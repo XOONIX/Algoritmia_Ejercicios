@@ -1,7 +1,7 @@
 //Johnny Fabian Cardozo M
 //
 //Nombre:Categoria de edad segun año
-//Entrada:edad
+//Entrada:edad; como entero
 //Salida:Dependiendo el valor, podra desplegar (Es un bebe, un niño, adolecente, adulto o adulto mayor)
 //Proceso:
 
