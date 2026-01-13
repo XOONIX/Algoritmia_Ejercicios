@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Nivel de prioridad según número-->
+    <!--Entrada: pri (como entero del 1 al 5)-->
+    <!--Salida: Prioridad predeterminada según valor escogido-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel de prioridad según número</title>
+</head>
+<body>
+    <h1>Convertidor de nivel de prioridad</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarPrioridad(event)">
+        <p>Elige un número del 1 al 5 según el nivel de urgencia que tengas (1 es el más bajo y 5 el más alto):</p>
+        <input type="number" id="pri" name="pri" min="1" max="5" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarPrioridad(event) {
+            event.preventDefault();
+            const pri = parseInt(document.getElementById('pri').value);
+            let resultado;
+
+            switch (pri) {
+                case 1: resultado = "Prioridad nula, (puedes pasar otro día)"; break;
+                case 2: resultado = "Prioridad baja, puede esperar"; break;
+                case 3: resultado = "Prioridad media"; break;
+                case 4: resultado = "Prioridad elevada pero puede esperar"; break;
+                case 5: resultado = "Prioridad alta"; break;
+                default: resultado = "No hay sistema, pasa otro día";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

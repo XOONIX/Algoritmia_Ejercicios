@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Material según código-->
+    <!--Entrada: Material (como entero)-->
+    <!--Salida: El material según el código es (Madera, Acero, Piedra o Cartón)-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material según código</title>
+</head>
+<body>
+    <h1>Material según código</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarMaterial(event)">
+        <p>¿Qué tipo de material tienes?</p>
+        <p>123 = Madera</p>
+        <p>345 = Acero</p>
+        <p>567 = Piedra</p>
+        <p>789 = Cartón</p>
+
+        <input type="number" id="material" name="material" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarMaterial(event) {
+            event.preventDefault();
+            const material = parseInt(document.getElementById('material').value);
+            let resultado;
+
+            switch (material) {
+                case 123: resultado = "El material según el código es Madera"; break;
+                case 345: resultado = "El material según el código es Acero"; break;
+                case 567: resultado = "El material según el código es Piedra"; break;
+                case 789: resultado = "El material según el código es Cartón"; break;
+                default: resultado = "Material no encontrado";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

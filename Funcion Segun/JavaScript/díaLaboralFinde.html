@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Día laboral o finde-->
+    <!--Entrada: dia (como entero)-->
+    <!--Salida: Indica si el día es laboral o no-->
+    <!--Proceso: Según el número ingresado, se determina el tipo de día-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día Laboral o Finde</title>
+</head>
+<body>
+    <h1>Día Laboral o Finde</h1>
+    <!--Formulario base-->
+    <form class="formulario" onsubmit="mostrarResultado(event)">
+        <label for="dia">¿Qué día quieres consultar?</label><br><br>
+        <p>1 = Lunes</p>
+        <p>2 = Martes</p>
+        <p>3 = Miércoles</p>
+        <p>4 = Jueves</p>
+        <p>5 = Viernes</p>
+        <p>6 = Sábado</p>
+        <p>7 = Domingo</p>
+        <p>8 = Festivo</p>
+
+        <input type="number" id="dia" name="dia" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Espacio para mostrar el resultado-->
+    <div id="resultado" class="result"></div>
+
+    <script>
+        function mostrarResultado(event) {
+            event.preventDefault();
+            const dia = parseInt(document.getElementById('dia').value);
+            const resultado = diaLaboralOFinde(dia);
+            document.getElementById('resultado').textContent = resultado;
+        }
+
+        function diaLaboralOFinde(dia) {
+            switch (dia) {
+                case 1: return "¡El día Lunes es Laboral!";
+                case 2: return "¡El día Martes es Laboral!";
+                case 3: return "¡El día Miércoles es Laboral!";
+                case 4: return "¡El día Jueves es Laboral!";
+                case 5: return "¡El día Viernes es Laboral!";
+                case 6: return "¡El día Sábado NO es Laboral!";
+                case 7: return "¡El día Domingo NO es Laboral!";
+                case 8: return "¡Un día Festivo NO es Laboral!";
+                default: return "Día no reconocido";
+            }
+        }
+    </script>
+</body>
+</html>

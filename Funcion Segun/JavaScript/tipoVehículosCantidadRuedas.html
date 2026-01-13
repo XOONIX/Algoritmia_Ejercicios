@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Tipo de vehículos según cantidad de ruedas-->
+    <!--Entrada: ruedas (como entero)-->
+    <!--Salida: Dependiendo el valor escogido, muestra un valor preestablecido-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Vehículo según ruedas</title>
+</head>
+<body>
+    <h1>Tipo de Vehículo según la cantidad de ruedas</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarVehiculo(event)">
+        <p>¿Cuántas ruedas tiene tu vehículo?</p>
+        <input type="number" id="ruedas" name="ruedas" min="0" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarVehiculo(event) {
+            event.preventDefault();
+            const ruedas = parseInt(document.getElementById('ruedas').value);
+            let resultado;
+
+            switch (ruedas) {
+                case 0: resultado = "¿Es una nave espacial?"; break;
+                case 1: resultado = "Monociclo"; break;
+                case 2: resultado = "Bici, moto, o monopatín"; break;
+                case 3: resultado = "Triciclo"; break;
+                case 4: resultado = "Cuatrimoto o carro"; break;
+                case 5: resultado = "Vehículo no reconocido"; break;
+                case 6: resultado = "Bus o camión"; break;
+                case 7: resultado = "Bus o camión pero con rueda de repuesto"; break;
+                case 8: resultado = "¿Acaso tienes un tanque?"; break;
+                default: resultado = "Eso no es de este planeta";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

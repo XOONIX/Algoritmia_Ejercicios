@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorNumero</title>
+    
+</head>
+<body>
+    <h1>Pintar un numero</h1>
+    <p>Elige un color</p>
+    <table>
+        <th> Colores</th>
+        <tr>
+            <td>1. Amarillo</td>
+            <td>2. Verde </td>
+            <td>3. Rojo</td>
+        </tr>
+    </table>
+
+    <p></p>
+
+    <form class="formilario" onsubmit="mostrarResultado(event)">
+        <label for="numero">Ingrese un numero del 1 al 3</label>
+        <input type="number" id="numero" name="numero" required>
+        <button type="submit">Color</button>
+    </form>
+    <div id="resultado" class="result"></div>
+
+    <script>
+        function mostrarResultado(event){
+            event.preventDefault();
+            const numero = parseInt(document.getElementById('numero').value);
+            const resultado =colorDelNumero (numero);
+            document.getElementById('resultado').textContent =resultado;
+        }
+
+        function colorDelNumero(numero){
+            switch(numero){
+            case 1: 
+                resultado.style.background="Black";
+                resultado.style.color = "yellow";
+                return "Elegiste el color amarillo";
+                break;
+            case 2: 
+                resultado.style.background="Black";
+                resultado.style.color="Green"
+                return "Elegiste el color verde"
+                break;
+            case 3: 
+                resultado.style.background="Black";
+                resultado.style.color="Red"
+                return "Elegiste el color Rojo"
+                break;
+            default:
+                resultado.style="none";
+                return "Color no establecido"
+            }
+        }
+    </script>
+</body>
+</html>
+

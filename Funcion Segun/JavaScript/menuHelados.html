@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Tipo de helado-->
+    <!--Entrada: helado (como entero)-->
+    <!--Salida: Dependiendo del valor seleccionado, muestra la característica del mismo-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Helado</title>
+</head>
+<body>
+    <h1>Menú de Helados</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarHelado(event)">
+        <p>¿Qué sabor de helado deseas? (Elige un número)</p>
+        <ul>
+            <li>1 : Fresa</li>
+            <li>2 : Chocolate</li>
+            <li>3 : Kiwi</li>
+            <li>4 : Manzana</li>
+            <li>5 : Melón</li>
+            <li>6 : Limón</li>
+        </ul>
+
+        <input type="number" id="helado" name="helado" min="1" max="6" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarHelado(event) {
+            event.preventDefault();
+            const helado = parseInt(document.getElementById('helado').value);
+            let resultado;
+
+            switch (helado) {
+                case 1: resultado = "El helado de Fresa está agotado"; break;
+                case 2: resultado = "El helado de Chocolate viene con maní"; break;
+                case 3: resultado = "El helado de Kiwi es el mejor"; break;
+                case 4: resultado = "El helado de Manzana viene en verde y rojo"; break;
+                case 5: resultado = "El helado de Melón no existe"; break;
+                case 6: resultado = "El helado de Limón es un limón que olvidé en el refri"; break;
+                default: resultado = "Helado no válido";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

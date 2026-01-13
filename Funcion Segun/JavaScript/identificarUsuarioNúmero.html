@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Identificar usuario según número-->
+    <!--Entrada: num (como entero)-->
+    <!--Salida: Dependiendo el valor elegido muestra (Admin, Invitado, Cliente, Vendedor o Salir)-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificar Usuario según Número</title>
+</head>
+<body>
+    <h1>Identificar Usuario según Número</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarUsuario(event)">
+        <p>¿Qué número de identificación tienes? (1 al 5)</p>
+        <p>1 = Admin</p>
+        <p>2 = Invitado</p>
+        <p>3 = Cliente</p>
+        <p>4 = Vendedor</p>
+        <p>5 = Salir</p>
+
+        <input type="number" id="num" name="num" min="1" max="5" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarUsuario(event) {
+            event.preventDefault();
+            const num = parseInt(document.getElementById('num').value);
+            let usuario;
+
+            switch (num) {
+                case 1: usuario = "Admin"; break;
+                case 2: usuario = "Invitado"; break;
+                case 3: usuario = "Cliente"; break;
+                case 4: usuario = "Vendedor"; break;
+                case 5: usuario = "Salir"; break;
+                default: usuario = "Valor no válido";
+            }
+
+            document.getElementById('resultado').textContent = usuario;
+        }
+    </script>
+</body>
+</html>

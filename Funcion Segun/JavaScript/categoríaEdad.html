@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo M-->
+    <!--Nombre: Categoría de edad según año-->
+    <!--Entrada: edad (como entero)-->
+    <!--Salida: Mensaje de categoría según la edad-->
+    <!--Proceso: Clasificar edad en categorías con if/switch-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoría de Edad</title>
+</head>
+<body>
+    <h1>Categoría de Edad según Años</h1>
+    <!--Formulario base-->
+    <form class="formulario" onsubmit="mostrarResultado(event)">
+        <label for="edad">¿Qué edad tienes?</label>
+        <input type="number" id="edad" name="edad" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Espacio para mostrar el resultado-->
+    <div id="resultado" class="result"></div>
+
+    <script>
+        function mostrarResultado(event) {
+            event.preventDefault();
+            const edadIngresada = parseInt(document.getElementById('edad').value);
+            const resultado = categoriaEdad(edadIngresada);
+            document.getElementById('resultado').textContent = resultado;
+        }
+
+        function categoriaEdad(edad) {
+            let categoria;
+
+            if (edad === 0) {
+                categoria = 1; // Bebe
+            } else if (edad >= 1 && edad <= 10) {
+                categoria = 2; // Niño
+            } else if (edad >= 11 && edad <= 17) {
+                categoria = 3; // Adolescente
+            } else if (edad >= 18 && edad <= 25) {
+                categoria = 4; // Adulto joven
+            } else if (edad >= 26 && edad <= 40) {
+                categoria = 5; // Adulto
+            } else if (edad >= 41 && edad <= 57) {
+                categoria = 6; // Principio adulto mayor
+            } else if (edad >= 58 && edad <= 90) {
+                categoria = 7; // Adulto mayor
+            } else if (edad > 90) {
+                categoria = 8; // Imperecedero
+            } else {
+                categoria = 0; // Valor no válido
+            }
+
+            switch (categoria) {
+                case 1: return "Es un bebé";
+                case 2: return "Es un niño";
+                case 3: return "Es un adolescente";
+                case 4: return "Es un adulto joven";
+                case 5: return "Es un adulto";
+                case 6: return "Principio de adulto mayor";
+                case 7: return "Es un adulto mayor";
+                case 8: return "Imperecedero";
+                default: return "Valor no válido";
+            }
+        }
+    </script>
+</body>
+</html>

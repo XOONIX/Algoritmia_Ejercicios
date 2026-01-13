@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Tipo de clima según número-->
+    <!--Entrada: código (como entero)-->
+    <!--Salida: Dependiendo el código elegido muestra (Lluvioso, Soleado, Neblina o Tormenta)-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de clima según código</title>
+</head>
+<body>
+    <h1>Convertidor de código a tipo de clima</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarClima(event)">
+        <p>¿Qué código muestra tu consola?</p>
+        <p>Opciones disponibles: 123 (Lluvia), 345 (Sol), 567 (Neblina), 789 (Tormenta)</p>
+        <input type="number" id="codigo" name="codigo" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarClima(event) {
+            event.preventDefault();
+            const codigo = parseInt(document.getElementById('codigo').value);
+            let resultado;
+
+            switch (codigo) {
+                case 123: resultado = "El clima según el código es Lluvioso"; break;
+                case 345: resultado = "El clima según el código es Soleado"; break;
+                case 567: resultado = "El clima según el código es con Neblina"; break;
+                case 789: resultado = "El clima según el código es Tormenta"; break;
+                default: resultado = "Código no reconocido";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

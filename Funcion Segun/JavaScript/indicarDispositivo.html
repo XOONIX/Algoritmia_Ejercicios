@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Indicar tipo de dispositivo-->
+    <!--Entrada: dispositivo (como entero)-->
+    <!--Salida: Tu dispositivo es (Celular, Pc, Laptop, Reloj o Lámpara)-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicar tipo de dispositivo</title>
+</head>
+<body>
+    <h1>Indicar tipo de dispositivo</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarDispositivo(event)">
+        <p>¿Cuál es tu dispositivo? (Elige un número)</p>
+        <p>1 = Celular</p>
+        <p>2 = PC</p>
+        <p>3 = Laptop</p>
+        <p>4 = Reloj</p>
+        <p>5 = Lámpara</p>
+
+        <input type="number" id="dispositivo" name="dispositivo" min="1" max="5" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarDispositivo(event) {
+            event.preventDefault();
+            const dispositivo = parseInt(document.getElementById('dispositivo').value);
+            let resultado;
+
+            switch (dispositivo) {
+                case 1: resultado = "Tu dispositivo es Celular"; break;
+                case 2: resultado = "Tu dispositivo es PC"; break;
+                case 3: resultado = "Tu dispositivo es Laptop"; break;
+                case 4: resultado = "Tu dispositivo es Reloj"; break;
+                case 5: resultado = "Tu dispositivo es ¡Lámpara!"; break;
+                default: resultado = "Valor no válido";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

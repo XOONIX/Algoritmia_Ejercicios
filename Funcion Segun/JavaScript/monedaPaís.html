@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Tipo de moneda según el país-->
+    <!--Entrada: moneda (como entero)-->
+    <!--Salida: Peso colombiano, Dólar canadiense, Real, Euro o Rublo-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Moneda según el País</title>
+</head>
+<body>
+    <h1>Consulta la moneda de un país</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarMoneda(event)">
+        <p>Elige un país (número):</p>
+        <ul>
+            <li>1 : Colombia</li>
+            <li>2 : Canadá</li>
+            <li>3 : Brasil</li>
+            <li>4 : Alemania</li>
+            <li>5 : Rusia</li>
+            <li>6 : Holanda</li>
+        </ul>
+
+        <input type="number" id="moneda" name="moneda" min="1" max="6" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarMoneda(event) {
+            event.preventDefault();
+            const moneda = parseInt(document.getElementById('moneda').value);
+            let resultado;
+
+            switch (moneda) {
+                case 1: resultado = "La moneda es el Peso Colombiano"; break;
+                case 2: resultado = "La moneda es el Dólar Canadiense"; break;
+                case 3: resultado = "La moneda es el Real"; break;
+                case 4: resultado = "La moneda es el Euro"; break;
+                case 5: resultado = "La moneda es el Rublo Ruso"; break;
+                case 6: resultado = "La moneda es el Euro"; break;
+                default: resultado = "Valor no válido";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

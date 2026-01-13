@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Tipo de deporte según sus integrantes-->
+    <!--Entrada: Deporte (como entero)-->
+    <!--Salida: Deporte seleccionado-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Deporte según integrantes</title>
+</head>
+<body>
+    <h1>Tipo de deporte según el número de integrantes</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarDeporte(event)">
+        <p>¿Cuántas personas tiene el deporte?</p>
+        <input type="number" id="deporte" name="deporte" min="0" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarDeporte(event) {
+            event.preventDefault();
+            const deporte = parseInt(document.getElementById('deporte').value);
+            let resultado;
+
+            switch (deporte) {
+                case 0: resultado = "Ajedrez IA vs IA"; break;
+                case 1: resultado = "Natación"; break;
+                case 2: resultado = "Tenis"; break;
+                case 3: resultado = "Basket triples"; break;
+                case 4: resultado = "Escalada"; break;
+                case 5: resultado = "Hockey"; break;
+                case 6: resultado = "Paintball"; break;
+                case 7: resultado = "Caza de ballenas"; break;
+                case 8: resultado = "Ponchados"; break;
+                default: resultado = "Demasiados integrantes, deporte no reconocido";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Tipo de combustible-->
+    <!--Entrada: combustible (como entero)-->
+    <!--Salida: Dependiendo la opción elegida muestra (Gasolina, Etanol, Aeroespacial o Helio)-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de combustible</title>
+</head>
+<body>
+    <h1>Convertidor de código a tipo de combustible</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarCombustible(event)">
+        <p>¿Qué combustible deseas?</p>
+        <p>Opciones disponibles:</p>
+        <ul>
+            <li>123 : Gasolina</li>
+            <li>345 : Etanol</li>
+            <li>567 : Aeroespacial</li>
+            <li>789 : Helio</li>
+        </ul>
+        <input type="number" id="combustible" name="combustible" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarCombustible(event) {
+            event.preventDefault();
+            const combustible = parseInt(document.getElementById('combustible').value);
+            let resultado;
+
+            switch (combustible) {
+                case 123: resultado = "El combustible según el código es Gasolina"; break;
+                case 345: resultado = "El combustible según el código es Etanol"; break;
+                case 567: resultado = "El combustible según el código es Aeroespacial"; break;
+                case 789: resultado = "El combustible según el código es Helio"; break;
+                default: resultado = "Combustible no encontrado";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

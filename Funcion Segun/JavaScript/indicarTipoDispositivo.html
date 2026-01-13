@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Idioma según el país-->
+    <!--Entrada: País (como entero)-->
+    <!--Salida: Lenguaje predeterminado según la opción escogida-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idioma según el país</title>
+</head>
+<body>
+    <h1>Idioma según el país</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarIdioma(event)">
+        <p>¿De qué país deseas conocer el idioma?</p>
+        <p>1 = Colombia</p>
+        <p>2 = Canadá</p>
+        <p>3 = Brasil</p>
+        <p>4 = Alemania</p>
+        <p>5 = Rusia</p>
+        <p>6 = Holanda</p>
+
+        <input type="number" id="pais" name="pais" min="1" max="6" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarIdioma(event) {
+            event.preventDefault();
+            const pais = parseInt(document.getElementById('pais').value);
+            let idioma;
+
+            switch (pais) {
+                case 1: idioma = "Español latino"; break;
+                case 2: idioma = "Inglés y Francés"; break;
+                case 3: idioma = "Portugués"; break;
+                case 4: idioma = "Alemán"; break;
+                case 5: idioma = "Ruso"; break;
+                case 6: idioma = "Neerlandés"; break;
+                default: idioma = "Valor no válido";
+            }
+
+            document.getElementById('resultado').textContent = idioma;
+        }
+    </script>
+</body>
+</html>

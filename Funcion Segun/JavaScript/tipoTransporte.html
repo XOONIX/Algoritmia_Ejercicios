@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Tipo de transporte-->
+    <!--Entrada: Transporte (como entero)-->
+    <!--Salida: Característica según objeto seleccionado-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Transporte</title>
+</head>
+<body>
+    <h1>Selecciona tu tipo de transporte</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarTransporte(event)">
+        <p>¿Qué tipo de transporte sueles tomar?</p>
+        <ul>
+            <li>1 : Helicóptero</li>
+            <li>2 : Submarino</li>
+            <li>3 : Tanque</li>
+            <li>4 : Avioneta</li>
+            <li>5 : Aerodeslizador</li>
+            <li>6 : Bus</li>
+            <li>7 : Bicicleta</li>
+            <li>8 : Moto</li>
+            <li>9 : Taxi</li>
+            <li>10 : Mototaxi</li>
+            <li>11 : Caballo</li>
+        </ul>
+
+        <input type="number" id="transporte" name="transporte" min="1" max="11" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarTransporte(event) {
+            event.preventDefault();
+            const transporte = parseInt(document.getElementById('transporte').value);
+            let resultado;
+
+            switch (transporte) {
+                case 1: resultado = "Helicóptero, Efectivo pero ruidoso"; break;
+                case 2: resultado = "Submarino, ¿Vives en Atlantis?"; break;
+                case 3: resultado = "Tanque, ¿Vives en Rusia?"; break;
+                case 4: resultado = "Avioneta, Vuela suave como gaviota"; break;
+                case 5: resultado = "Aerodeslizador, apenas para los huecos de Bogotá"; break;
+                case 6: resultado = "Bus, ¡Otro día más espichado!"; break;
+                case 7: resultado = "Bicicleta, un ¡hurra! por el deporte"; break;
+                case 8: resultado = "Moto, ¿Y la chaqueta de cuero?"; break;
+                case 9: resultado = "Taxi, (Hasta allá no voy)"; break;
+                case 10: resultado = "Mototaxi, mejor ve caminando. (Es más seguro)"; break;
+                case 11: resultado = "Caballo, ¡Vé, qué perro más raro!"; break;
+                default: resultado = "¿Qué rayos usas?";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

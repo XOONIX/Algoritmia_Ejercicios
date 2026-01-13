@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo-->
+    <!--Nombre: Asignar calificación del estudiante-->
+    <!--Entrada: nota (valor real)-->
+    <!--Salida: Mensaje de calificación-->
+    <!--Proceso: Convierte la nota en un rango (aproximación) y muestra el resultado-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignar Calificación</title>
+</head>
+<body>
+    <h1>Asignar Calificación del Estudiante</h1>
+    <!--Formulario base-->
+    <form class="formulario" onsubmit="mostrarResultado(event)">
+        <label for="nota">De las diez preguntas hechas, ¿Cuántas tienes bien? (0 a 50):</label>
+        <input type="number" id="nota" name="nota" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Espacio para mostrar el resultado-->
+    <div id="resultado" class="result"></div>
+
+    <script>
+        function mostrarResultado(event) {
+            event.preventDefault();
+            const nota = parseFloat(document.getElementById('nota').value);
+            const resultado = asignarCalificacion(nota);
+            document.getElementById('resultado').textContent = resultado;
+        }
+
+        function asignarCalificacion(nota) {
+            let aprox;
+
+            if (nota >= 0 && nota <= 10) {
+                aprox = 10;
+            } else if (nota >= 11 && nota <= 20) {
+                aprox = 20;
+            } else if (nota >= 21 && nota <= 30) {
+                aprox = 30;
+            } else if (nota >= 31 && nota <= 40) {
+                aprox = 40;
+            } else if (nota >= 41 && nota <= 45) {
+                aprox = 45;
+            } else if (nota >= 46 && nota <= 50) {
+                aprox = 50;
+            } else {
+                aprox = 0;
+            }
+
+            switch (aprox) {
+                case 10: return "Repetir prueba";
+                case 20: return "Reprobó";
+                case 30: return "Pasó rosando";
+                case 40: return "Pasó, pero estudia más";
+                case 45: return "Excelente";
+                case 50: return "¡Pasó el año!";
+                default: return "Valor no válido";
+            }
+        }
+    </script>
+</body>
+</html>

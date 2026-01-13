@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Clasificación de película según la edad-->
+    <!--Entrada: años (como entero)-->
+    <!--Salida: Mensaje de clasificación de acceso a películas-->
+    <!--Proceso: Clasifica la edad en tres categorías-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificación de Película</title>
+</head>
+<body>
+    <h1>Clasificación de Película según la Edad</h1>
+    <!--Formulario base-->
+    <form class="formulario" onsubmit="mostrarResultado(event)">
+        <label for="edad">¿Cuántos años tienes?</label>
+        <input type="number" id="edad" name="edad" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Espacio para mostrar el resultado-->
+    <div id="resultado" class="result"></div>
+
+    <script>
+        function mostrarResultado(event) {
+            event.preventDefault();
+            const edadIngresada = parseInt(document.getElementById('edad').value);
+            const resultado = clasificacionPelicula(edadIngresada);
+            document.getElementById('resultado').textContent = resultado;
+        }
+
+        function clasificacionPelicula(años) {
+            let categoria;
+
+            if (años >= 1 && años <= 17) {
+                categoria = 1; // Solo películas para niños
+            } else if (años >= 18) {
+                categoria = 2; // Cualquier película
+            } else if (años === 0) {
+                categoria = 3; // No puede ingresar al cine
+            } else {
+                categoria = 0; // Valor no válido
+            }
+
+            switch (categoria) {
+                case 1: return "Solo películas para niños";
+                case 2: return "Cualquier película";
+                case 3: return "No puede ingresar al cine";
+                default: return "Valor no válido";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertidorNota</title>
+</head>
+<body>
+    <h1>Determinar una nota en concepto cualitativo</h1>
+    <form class="formulario" onsubmit="mostrarResultado(event)">
+        <label for="nota">Ingrese su nota del 10 al 50</label>
+        <input type="number" id="nota" name="nota" required>
+        <button type="submit">Calcular</button>
+        <button type="reset">Borrar</button>
+    </form>
+    <div id="resultado" class="result"></div>
+
+    <script>
+        function mostrarResultado(event){
+            event.preventDefault();
+            const nota = parseInt(document.getElementById('nota').value);
+            const resultado = notaCuantitativa(nota);
+            document.getElementById('resultado').textContent = resultado;
+        }
+
+    
+        function notaCuantitativa(nota){
+            let aprox = 0
+
+            if (nota >=0 && nota <=10){
+                aprox = 10
+            }
+            else if (nota >=11 && nota <=20){
+                aprox=20
+            }
+            else if (nota >=21 && nota <=30){
+                aprox=30
+            }
+            else if (nota >=31 && nota <=40){
+                aprox=40
+            }
+            else if (nota >=41 && nota <=50){
+                aprox=50
+            }
+            else {
+                return "Nota excede los limites calificables";  
+            };
+               
+            // Llamar a la función de clasificación
+            return clasificarNota(aprox);
+
+        }
+
+            function clasificarNota(aprox){
+                switch (aprox){
+                    case 10: 
+                        return "Menos que Insuficiente";
+                        break;
+                    case 20:
+                        return "Insuficiente";
+                        break;
+                    case 30:
+                        return "Aceptable";
+                        break;
+                    case 40:
+                        return "Bueno";
+                        break;
+                    case 50:
+                        return "Excelente";
+                        break;
+                    default:
+                        return " Valor no reconocido"
+                }
+            }
+    </script>
+</body>
+</html>

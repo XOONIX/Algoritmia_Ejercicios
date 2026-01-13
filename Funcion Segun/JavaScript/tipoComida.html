@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Tipo de comida-->
+    <!--Entrada: Comida (como entero)-->
+    <!--Salida: Dependiendo el valor escogido, da una respuesta predeterminada-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de comida</title>
+</head>
+<body>
+    <h1>Elige un tipo de comida</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarComida(event)">
+        <p>¿Qué tipo de comida deseas?</p>
+        <ul>
+            <li>1 : Grasosa</li>
+            <li>2 : Dulce</li>
+            <li>3 : Saludable</li>
+            <li>4 : Mexicana</li>
+            <li>5 : Americana</li>
+            <li>6 : Básica</li>
+        </ul>
+        <input type="number" id="comida" name="comida" min="1" max="6" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarComida(event) {
+            event.preventDefault();
+            const comida = parseInt(document.getElementById('comida').value);
+            let resultado;
+
+            switch (comida) {
+                case 1: resultado = "Un buen Chorizo"; break;
+                case 2: resultado = "Tus ojos"; break;
+                case 3: resultado = "Ensalada de zanahoria"; break;
+                case 4: resultado = "Unos taquitos"; break;
+                case 5: resultado = "Perro caliente"; break;
+                case 6: resultado = "Arroz sin sal"; break;
+                default: resultado = "Comida no reconocida";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

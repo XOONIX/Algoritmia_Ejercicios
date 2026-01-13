@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre:Tipo de transporte segun numero-->
+    <!--Proceso: -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte</title>
+</head>
+<body>
+    <h1>Tipo de transporte segun numero</h1>
+    <!--form etiqueta vrea la estructura base del formulario-->
+    <form class="formulario" onsubmit="mostrarResultado(event)">
+        <label for="transporte">Ingrese un numero del 1 al 5</label>
+        <input type="number" id="transporte" name="transporte" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">borrar</button>
+    </form>
+    <!--"div" Se usara para crear un espacio, que luego llenara la respuesta-->
+    <div id="resultado" class="result"></div>
+
+    <script>
+        function mostrarResultado(event){
+            event.preventDefault();
+            const transporte = parseInt(document.getElementById('transporte').value);
+            const resultado = tipoTransporte(transporte);
+            document.getElementById('resultado').textContent = resultado;
+
+        }
+            
+            function tipoTransporte(transporte){
+                switch (transporte){
+                case 1:
+                    return"Moto";
+                    break;                
+                case 2:
+                    return"Bicicleta";
+                    break;                
+                case 3:
+                    return"Tanque";
+                    break;                
+                case 4:
+                    return"Camion";
+                    break;                
+                case 5:
+                    return"Patineta";
+                    break;  
+                default:
+                    return "Valor no identificado";          
+              
+            }
+        }
+    </script>
+    
+</body>
+</html>

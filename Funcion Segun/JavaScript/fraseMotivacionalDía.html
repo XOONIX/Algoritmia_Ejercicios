@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Frase motivacional según el día de la semana-->
+    <!--Entrada: Día (como entero)-->
+    <!--Salida: Dependiendo el día, muestra una frase motivacional-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frase Motivacional según el Día</title>
+</head>
+<body>
+    <h1>Frase Motivacional según el Día de la Semana</h1>
+    
+    <!--Formulario-->
+    <form onsubmit="mostrarFrase(event)">
+        <p>¡Elige un día!</p>
+        <p>1 = Lunes</p>
+        <p>2 = Martes</p>
+        <p>3 = Miércoles</p>
+        <p>4 = Jueves</p>
+        <p>5 = Viernes</p>
+        <p>6 = Sábado</p>
+        <p>7 = Domingo</p>
+        <p>8 = Festivo</p>
+
+        <input type="number" id="dia" name="dia" min="1" max="8" required>
+        <button type="submit">Mostrar frase</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarFrase(event) {
+            event.preventDefault();
+            const dia = parseInt(document.getElementById('dia').value);
+            let mensaje;
+
+            switch (dia) {
+                case 1: mensaje = "¡Si sobreviviste al anterior lunes, ¿por qué morirías este?!"; break;
+                case 2: mensaje = "¡Al menos no irás a la guerra, ánimo!"; break;
+                case 3: mensaje = "¡Cada día más cerca del viernes!"; break;
+                case 4: mensaje = "¡Ánimo!"; break;
+                case 5: mensaje = "¡Al fin a descansar!"; break;
+                case 6: mensaje = "¡Sábado de lokiar!"; break;
+                case 7: mensaje = "¡Domingo de ramos!"; break;
+                case 8: mensaje = "¡Feliz navidad!"; break;
+                default: mensaje = "Día no reconocido";
+            }
+
+            document.getElementById('resultado').textContent = mensaje;
+        }
+    </script>
+</body>
+</html>

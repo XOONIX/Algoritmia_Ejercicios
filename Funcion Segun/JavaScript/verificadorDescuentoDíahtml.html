@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Verificador de descuento según el día-->
+    <!--Entrada: día (como entero del 1 al 8)-->
+    <!--Salida: Dependiendo el valor escogido, se entregará un descuento acorde-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Descuento según el Día</title>
+</head>
+<body>
+    <h1>Verificador de Descuento según el Día</h1>
+
+    <!--Formulario-->
+    <form onsubmit="verificarDescuento(event)">
+        <p>¿Qué día harás las compras?</p>
+        <input type="number" id="dia" name="dia" min="1" max="8" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function verificarDescuento(event) {
+            event.preventDefault();
+            const dia = parseInt(document.getElementById('dia').value);
+            let resultado;
+
+            switch (dia) {
+                case 1: resultado = "¡Tienes un descuento de (10%) por ser Lunes!"; break;
+                case 2: resultado = "¡Tienes un descuento de (5%) por ser Martes!"; break;
+                case 3: resultado = "¡Tienes un descuento de (0%) por ser Miércoles!"; break;
+                case 4: resultado = "¡Tienes un descuento de (30%) por ser Jueves!"; break;
+                case 5: resultado = "¡Tienes un descuento de (1%) por ser Viernes!"; break;
+                case 6: resultado = "¡Tienes un descuento de (50%) por ser Sábado!"; break;
+                case 7: resultado = "¡Tienes un descuento de (5%) por ser Domingo!"; break;
+                case 8: resultado = "¡Tienes un descuento de (200%) ¨tienes cash back¨ por ser Festivo!"; break;
+                default: resultado = "Día no reconocido";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

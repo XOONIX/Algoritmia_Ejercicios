@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Estación del año según el mes-->
+    <!--Entrada: Mes (como entero)-->
+    <!--Salida: Dependiendo del mes escogido, muestra (Invierno, Primavera, Verano u Otoño)-->
+    <!--Proceso: Usar menú de selección y mostrar estación-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estación del Año</title>
+</head>
+<body>
+    <h1>Estación del Año según el Mes</h1>
+    <!--Formulario base-->
+    <form class="formulario" onsubmit="mostrarResultado(event)">
+        <label for="mes">¿Qué mes deseas consultar?</label><br><br>
+        <p>1 = Enero</p>
+        <p>2 = Febrero</p>
+        <p>3 = Marzo</p>
+        <p>4 = Abril</p>
+        <p>5 = Mayo</p>
+        <p>6 = Junio</p>
+        <p>7 = Julio</p>
+        <p>8 = Agosto</p>
+        <p>9 = Septiembre</p>
+        <p>10 = Octubre</p>
+        <p>11 = Noviembre</p>
+        <p>12 = Diciembre</p>
+
+        <input type="number" id="mes" name="mes" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Espacio para mostrar resultado-->
+    <div id="resultado" class="result"></div>
+
+    <script>
+        function mostrarResultado(event) {
+            event.preventDefault();
+            const mes = parseInt(document.getElementById('mes').value);
+            const resultado = estacionDelAnio(mes);
+            document.getElementById('resultado').textContent = resultado;
+        }
+
+        function estacionDelAnio(mes) {
+            switch (mes) {
+                case 1: return "En Enero es Invierno";
+                case 2: return "En Febrero es Invierno";
+                case 3: return "En Marzo es Primavera";
+                case 4: return "En Abril es Primavera";
+                case 5: return "En Mayo es Primavera";
+                case 6: return "En Junio es Verano";
+                case 7: return "En Julio es Verano";
+                case 8: return "En Agosto es Verano";
+                case 9: return "En Septiembre es Otoño";
+                case 10: return "En Octubre es Otoño";
+                case 11: return "En Noviembre es Otoño";
+                case 12: return "En Diciembre es Invierno";
+                default: return "Valor no reconocido";
+            }
+        }
+    </script>
+</body>
+</html>

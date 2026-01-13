@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Tipo de documento según número-->
+    <!--Entrada: Documento (como entero)-->
+    <!--Salida: "Tu documento es (Cedula, Tarjeta de identidad, Cedula de extranjería, Visa o Contraseña)"-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de documento según número</title>
+</head>
+<body>
+    <h1>Identificador de tipo de documento</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarDocumento(event)">
+        <p>¿Cuál es tu documento? (Elige un número)</p>
+        <ul>
+            <li>1 : Cédula</li>
+            <li>2 : Tarjeta de identidad</li>
+            <li>3 : Cédula de extranjería</li>
+            <li>4 : Visa</li>
+            <li>5 : Contraseña</li>
+        </ul>
+        <input type="number" id="documento" name="documento" min="1" max="5" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarDocumento(event) {
+            event.preventDefault();
+            const documento = parseInt(document.getElementById('documento').value);
+            let resultado;
+
+            switch (documento) {
+                case 1: resultado = "Tu documento es Cédula"; break;
+                case 2: resultado = "Tu documento es Tarjeta de identidad"; break;
+                case 3: resultado = "Tu documento es Cédula de extranjería"; break;
+                case 4: resultado = "Tu documento es Visa"; break;
+                case 5: resultado = "Tu documento es Contraseña"; break;
+                default: resultado = "Documento no reconocido";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

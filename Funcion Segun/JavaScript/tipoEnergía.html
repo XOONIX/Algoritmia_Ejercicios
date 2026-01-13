@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Tipo de energía según clasificación-->
+    <!--Entrada: Energía (como entero)-->
+    <!--Salida: La energía es (Eléctrica, Eólica, Nuclear o Pilas)-->
+    <!--Proceso: Usar menú de opciones y mostrar la clasificación-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Energía</title>
+</head>
+<body>
+    <h1>Tipo de Energía según Clasificación</h1>
+    <!--Formulario base-->
+    <form class="formulario" onsubmit="mostrarResultado(event)">
+        <label for="energia">¿Qué tipo de energía tienes?</label><br><br>
+        <p>1 = Normal</p>
+        <p>2 = Limpia</p>
+        <p>3 = Peligrosa</p>
+        <p>4 = Desechable</p>
+
+        <input type="number" id="energia" name="energia" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Espacio para mostrar el resultado-->
+    <div id="resultado" class="result"></div>
+
+    <script>
+        function mostrarResultado(event) {
+            event.preventDefault();
+            const energia = parseInt(document.getElementById('energia').value);
+            const resultado = tipoEnergia(energia);
+            document.getElementById('resultado').textContent = resultado;
+        }
+
+        function tipoEnergia(energia) {
+            switch (energia) {
+                case 1: return "La energía es Eléctrica";
+                case 2: return "La energía es Eólica";
+                case 3: return "La energía es Nuclear";
+                case 4: return "La energía es Pilas";
+                default: return "Energía no clasificada";
+            }
+        }
+    </script>
+</body>
+</html>

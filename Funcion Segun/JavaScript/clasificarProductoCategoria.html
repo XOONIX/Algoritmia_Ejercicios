@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>categoriaproducto</title>
+</head>
+<body>
+    <h1>Clasificar el producto segun su categoria</h1>
+    <p>Elija alguno de los siguientes productos</p>
+    <p>Wuanabana <br> Pizza <br> Zanahoria <br> Poker <br></p>
+
+    <form class="formulario" onsubmit="mostrarResultado(event)">
+        <label for="comida">Ingrese la comida que quiera conocer</label>
+        <input type="text" id="comida" name="comida" required>
+        <button type="submit">Buscar</button>
+        <button type="reset">Borrar</button>
+    </form>
+    <div id="respuesta" class="result"></div>
+
+    <script>
+        function mostrarResultado(event){
+            event.preventDefault();
+            const comida = document.getElementById('comida').value;
+            const respuesta = tipoComida (comida);
+            document.getElementById('respuesta').textContent= respuesta;
+            
+            function tipoComida(comida){
+                switch(comida){
+                    case "Wuanabana" : 
+                        return"Es una fruta";
+                        break;
+                    case "Pizza": 
+                        return"Es comida rapida";
+                        break;
+                    case "Zanahoria": 
+                        return"Es un vegetal";
+                        break;
+                    case "Poker": 
+                        return"Es una bebida alcolica";
+                        break;
+                    default:
+                        return"Elemento no reconocido";
+                }
+
+            }
+            
+        }
+    </script>
+
+</body>
+</html>

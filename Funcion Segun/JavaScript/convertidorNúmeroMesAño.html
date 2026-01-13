@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Johnny Fabian Cardozo Montenegro-->
+    <!--Nombre: Mes del año según número-->
+    <!--Entrada: Mes (como entero del 1 al 12)-->
+    <!--Salida: "Tu mes es (Mes del año)" o "Valor no reconocido"-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes del año según número</title>
+</head>
+<body>
+    <h1>Convertidor de número a mes del año</h1>
+
+    <!--Formulario-->
+    <form onsubmit="mostrarMes(event)">
+        <p>¿Qué numerito te gustaría convertir? (1 - 12)</p>
+        <input type="number" id="mes" name="mes" min="1" max="12" required>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <!--Resultado-->
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        function mostrarMes(event) {
+            event.preventDefault();
+            const mes = parseInt(document.getElementById('mes').value);
+            let resultado;
+
+            switch (mes) {
+                case 1: resultado = "Tu mes es Enero"; break;
+                case 2: resultado = "Tu mes es Febrero"; break;
+                case 3: resultado = "Tu mes es Marzo"; break;
+                case 4: resultado = "Tu mes es Abril"; break;
+                case 5: resultado = "Tu mes es Mayo"; break;
+                case 6: resultado = "Tu mes es Junio"; break;
+                case 7: resultado = "Tu mes es Julio"; break;
+                case 8: resultado = "Tu mes es Agosto"; break;
+                case 9: resultado = "Tu mes es Septiembre"; break;
+                case 10: resultado = "Tu mes es Octubre"; break;
+                case 11: resultado = "Tu mes es Noviembre"; break;
+                case 12: resultado = "Tu mes es Diciembre"; break;
+                default: resultado = "Valor no reconocido";
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>
