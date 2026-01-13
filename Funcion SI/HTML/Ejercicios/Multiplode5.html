@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Es múltiplo de 5</title>
+    <!--Johnny Fabian Cardozo Montenegro 
+  //Nombre:Multiplo de 5 
+  //Entrada:multiplo; ingresa un valor entero
+  //Salida:El numero ;("es multiplo de 5", "No es multiplo de 5")
+  //Proceso:"multiplo" ingresa un caracter entero, "if" comprueba Sí es multiplo,
+  //dependiendo el valor imprime el resultado correspondiente-->
+</head>
+<body>
+    <h1>Es múltiplo de 5</h1>
+
+    <form class="form-group" onsubmit="mostrarResultado(event)">
+      <label for="multiplo">Ingresa un número:</label>
+      <input type="number" id="multiplo" name="multiplo" required>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado" class="result"></div>
+    
+  <script>
+    // Función para mostrar el resultado en la página
+    function mostrarResultado(event) {
+      event.preventDefault();
+      const multiplo = parseFloat(document.getElementById('multiplo').value);
+      const resultado = esMultiploDeCinco(multiplo);
+      document.getElementById('resultado').textContent = resultado;
+    }
+
+    // Función para determinar si un número es múltiplo de 5
+    function esMultiploDeCinco(multiplo) {
+      if (multiplo % 5 === 0) {
+        return "El número es múltiplo de 5.";
+      } else {
+        return "El número no es múltiplo de 5.";
+      }
+    }
+  </script>
+</body>
+</html>

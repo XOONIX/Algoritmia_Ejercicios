@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aprobó o reprobó</title>
+  <!--Johnny Fabian Cardozo Montenegro 
+  //Nombre: Aprobo o Reprobo
+  //Entrada:nota; Solicita un valor float
+  //Salida:El estudiante ;(aprobo o reprobo)
+  //Proceso:La variable nota recopila un dato float, 
+  //el "Sí" determina si el valor es igual o mayor a 60, y da la respuesta correspondiente.-->
+</head>
+<body>
+    <h1>Aprobó o reprobó</h1>
+    
+    <form class="form-group" onsubmit="mostrarResultado(event)">
+      <label for="nota">Ingresa la nota:</label>
+      <input type="number" id="nota" name="nota" required>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado" class="result"></div>
+  
+  <script>
+    // Función para mostrar el resultado en la página
+    function mostrarResultado(event) {
+      event.preventDefault();
+      const nota = parseFloat(document.getElementById('nota').value);
+      const resultado = aproboReprobo(nota);
+      document.getElementById('resultado').textContent = resultado;
+    }
+
+    // Función para determinar si un estudiante aprobó o reprobó
+    function aproboReprobo(nota) {
+      if (nota >= 60) {
+        return "El estudiante aprobó.";
+      } else {
+        return "El estudiante reprobó.";
+      }
+    }
+  </script>
+</body>
+</html>

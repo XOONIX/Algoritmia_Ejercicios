@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 4: ¿Puede votar?</title>
+  <!--Johnny Fabian Cardozo Montenegro 
+  //Nombre:Verificar Si una persona puede votar 
+  //Entrada:"edad" Solicita un valor entero, Nacion: solicita su nacionalidad,
+  //Salida:Si puede votar, No puede votar 
+  //Proceso:Ingresa las variables, "edad" y "nacion", comprueba Sí "edad" es mayor o menor a 18, 
+  //Sí su nacion es; "colombiana o colombiano" Despliega un resultado, Sí alguno de los dos falla arroja otro resultado.
+-->
+</head>
+<body>
+  
+    <h1>Puede votar</h1>
+
+    <form class="form-group" onsubmit="mostrarResultado(event)">
+      <label for="edad">Ingresa la edad:</label>
+      <input type="number" id="edad" name="edad" required>
+      <label for="nacion">Nacionalidad:</label>
+      <input type="text" id="nacion" name="nacion" required>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado" class="result"></div>
+    
+  <script>
+    // Función para mostrar el resultado en la página
+    function mostrarResultado(event) {
+      event.preventDefault();
+      const edad = parseInt(document.getElementById('edad').value);
+      const nacion = document.getElementById('nacion').value;
+      const resultado = puedeVotar(edad, nacion);
+      document.getElementById('resultado').textContent = resultado;
+    }
+
+    // Función para determinar si una persona puede votar
+    function puedeVotar(edad, nacion) {
+      if (edad >= 18 && nacion in ["colombia","colombiana","colombiano"] ){
+        return "La persona puede votar.";
+      } else {
+        return "La persona no puede votar.";
+      }
+    }
+  </script>
+</body>
+</html>
